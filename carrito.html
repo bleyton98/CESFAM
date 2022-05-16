@@ -5,7 +5,7 @@
     <title></title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="carrito.css">
     <script>
         document.addEventListener('DOMContentLoaded', () => {
           // Variables
@@ -65,7 +65,7 @@
               baseDeDatos.forEach((info) => {
                   // Estructura
                   const miNodo = document.createElement('div');
-                  miNodo.classList.add('card', 'col-sm-4');
+                  miNodo.classList.add('card','col-sm-4','bg-info');
                   // Body
                   const miNodoCardBody = document.createElement('div');
                   miNodoCardBody.classList.add('card-body');
@@ -197,6 +197,16 @@
 
 </head>
 <body>
+  <!-- Image and text -->
+<nav class="navbar navbar-black bg-primary">
+    <a class="navbar-brand" href="#">
+      <img src="cesfam.png" width="700" height="170" class="d-inline-block align-top" alt="">
+    </a>
+    <a class="nadbar-brand" href="#">
+        <img src="logo2.png" width="250" height="170" class="d-inline-block align-top" alt="">
+    </a>
+  </nav>
+
     <div class="container">
         <div class="row">
             <!-- Elementos generados a partir del JSON -->
