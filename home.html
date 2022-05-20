@@ -25,7 +25,16 @@
     .icon-wsp:active{
       transform: scale(0.9);
 
-    }    
+    } 
+    
+    /* .icon-carrito{
+      width: 60px;
+      height: 60px;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    } */
+
     .form-wsp{
       width: 280px;
       height: 300px;
@@ -81,13 +90,14 @@
       border-radius: 5px;
     }
     
+    
     </style>
 </head>
 
 <body>
 
   <!-- Api Whatsapp -->
-  <a href="https://api.whatsapp.com/send?phone=56987517151&text=Hola%basti" target="_blank">Api de whatsapp</a>
+  <a href="https://api.whatsapp.com/send?phone=56987517151&text=Hola%basti" target="_blank"></a>
 
 
 
@@ -100,7 +110,7 @@
         <img src="logo2.png" width="250" height="170" class="d-inline-block align-top" alt="">
     </a>
     <a class="nadbar-brand" href="carrito.html">
-        <button type="button"> <img src="carrito de compras.png" class="click" href="" height ="80" width="100" /></button>
+        <button type="button"> <img id="icon-carrito" src="carrito de compras.png" class="click" href="" height ="60" width="60" /></button>
     </a>
   </nav>
 
@@ -130,21 +140,23 @@
     <div class="card-header">
     </div>
   <div class="card-body">
-    <h5 class="card-title">Compra tus medicamentos </h5>
-    <p class="card-text">Un forma mas facil de comprar tus medicamentos, mas rapido y desde la comodidad de tu hogar.</p>
+    <h5 class="card-title">Compra tus Medicamentos Con Nosotros</h5>
+    <em>
+      <p class="card-text">Un forma mas fácil de comprar tus medicamentos, más rápido y desde la comodidad de tu hogar.</p>
+    </em>
   </div>
   <div class="card-footer">
   </div>
 </div>
 
-
-<div class="row">
+  <!-- Opiniones clientes -->
+<div class="m-0 row justify-content-center">
   <div class="col-sm-2">
     <img src="persona1.jpg" class="card-img-top" width="100" height="200" alt="...">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Andres Salinas</h5>
-        <p class="card-text">Es una buena pagina pero faltan funciones.</p>
+        <p class="card-text">Es una buena página, pero faltan funciones.</p>
       </div>
     </div>
   </div>
@@ -153,7 +165,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Camila torres</h5>
-        <p class="card-text">Eh comprado medicamentos en la pagina, tiene la funcion que dice tener.</p>
+        <p class="card-text">He comprado medicamentos en la página, tiene la función que dice tener.</p>
       </div>
     </div>
   </div>
@@ -162,7 +174,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Leslie Espinoza</h5>
-        <p class="card-text">Facil y rapido, pero un poco feo el diseño.</p>
+        <p class="card-text">Fácil y rápido, pero un poco feo el diseño.</p>
       </div>
     </div>
   </div>
@@ -171,7 +183,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Cristobal Colon</h5>
-        <p class="card-text">Me gusta!, recomendadisima.</p>
+        <p class="card-text">Me gusta! Recomendadísima.</p>
       </div>
     </div>
   </div>
@@ -180,7 +192,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Catalina Frias</h5>
-        <p class="card-text">Muy buena pagina, me gusta mucho.</p>
+        <p class="card-text">Muy buena página, me gusta mucho.</p>
       </div>
     </div>  
 </div>
@@ -190,11 +202,11 @@
     <!-- Whatsapp Form-->
     <div>
       <form class="form-wsp" action="" id="form">
-        <p>Nuevo Mensaje</p>
+        <p id="envianosTuConsulta">¡Envíanos tu consulta!</p>
         <label for="">Nombre</label>
         <input class="input-wsp" type="text" placeholder="Nombre">
-        <label for="">Mensaje</label>
-        <textarea class="textarea-wsp" name="" id="" cols="30" rows="10"></textarea>
+        <label for="">Consulta</label>
+        <textarea class="textarea-wsp" name="" id="" cols="30" rows="10" placeholder="Escribe tu consulta"></textarea>
         <button class="btn-wsp" id="sendbtn">Enviar Mensaje</button>
       </form>
       <img class="icon-wsp" src="wspLogo.png" alt="" id="wspicon">
@@ -205,7 +217,7 @@
     // javascrpit
     var btnwsp = document.querySelector('#wspicon');
     var form = document.querySelector('#form');
-    var sendbtn = document.querySelector('#form');
+    var sendbtn = document.querySelector('#sendbtn');
     // var btnwsp = document.querySelector('#wspicon')
 
     btnwsp.addEventListener('click', function(){
@@ -221,12 +233,13 @@
       var inputName = document.querySelector('.input-wsp').value
       var textareaMensaje = document.querySelector('.textarea-wsp').value
       let url = 
-      "https://api.whatsapp.com/send?phone=56987517151&text=Nombre: %0" + inputName + "%0A%0AMensaje: %0A" + 
+      "https://api.whatsapp.com/send?phone=56987517151&text=Nombre: %0A" + inputName + "%0A%0AMensaje: %0A" + 
         textareaMensaje + "%0A";
 
       window.open(url);
     }
   </script>
+
 
 </body>
 </html>
