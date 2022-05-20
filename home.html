@@ -11,9 +11,86 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
+
+    <!-- style wsp -->
+    <style>
+    .icon-wsp{
+      width: 60px;
+      height: 60px;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+    .icon-wsp:active{
+      transform: scale(0.9);
+
+    }    
+    .form-wsp{
+      width: 280px;
+      height: 300px;
+      background: white;
+      position: fixed;
+      bottom: 80px;
+      right: 50px;
+      box-shadow: 0 2px 20px 0 rgba(0,0,0,0.22);
+      border-radius: 5px;
+      padding: 10px;
+      display: none;
+
+    }
+  
+    .entrarysalir{
+      display: block;
+    }
+
+    .input-wsp{
+      width: 100%;
+      padding: 5px;
+      color: #666;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 1px solid rgba(0,0,0,0.19);
+    }
+    /* .input-wsp{
+      outline: rgb(36, 36, 36);
+    } */
+  
+    .textarea-wsp{
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+      padding: 5px;
+      color: #666;
+      height: 90px;
+      min-height: 90px;
+      max-height: 90px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 1px solid rgba(0,0,0,0.19);
+    }
+    /* .textarea-wsp{
+      outline: rgb(36, 36, 36);
+    } */
+    .btn-wsp{
+      width: 100%;
+      background: #2bab1b;
+      border: none;
+      padding: 5px;
+      color: white;
+      border-radius: 5px;
+    }
+    
+    </style>
 </head>
 
 <body>
+
+  <!-- Api Whatsapp -->
+  <a href="https://api.whatsapp.com/send?phone=56987517151&text=Hola%basti" target="_blank">Api de whatsapp</a>
+
+
+
   <!-- Image and text -->
 <nav class="navbar navbar-black bg-primary">
     <a class="navbar-brand" href="#">
@@ -22,8 +99,8 @@
     <a class="nadbar-brand" href="#">
         <img src="logo2.png" width="250" height="170" class="d-inline-block align-top" alt="">
     </a>
-    <a class="nadbar-brand" href="#">
-        <button type="button"> <img src="carrito de compras.png" class="click" href="carrito.html" height ="80" width="100" /></button>
+    <a class="nadbar-brand" href="carrito.html">
+        <button type="button"> <img src="carrito de compras.png" class="click" href="" height ="80" width="100" /></button>
     </a>
   </nav>
 
@@ -105,8 +182,51 @@
         <h5 class="card-title">Catalina Frias</h5>
         <p class="card-text">Muy buena pagina, me gusta mucho.</p>
       </div>
+    </div>  
+</div>
+</div>
+  <div>
+
+    <!-- Whatsapp Form-->
+    <div>
+      <form class="form-wsp" action="" id="form">
+        <p>Nuevo Mensaje</p>
+        <label for="">Nombre</label>
+        <input class="input-wsp" type="text" placeholder="Nombre">
+        <label for="">Mensaje</label>
+        <textarea class="textarea-wsp" name="" id="" cols="30" rows="10"></textarea>
+        <button class="btn-wsp" id="sendbtn">Enviar Mensaje</button>
+      </form>
+      <img class="icon-wsp" src="wspLogo.png" alt="" id="wspicon">
     </div>
-</div>
-</div>
+  </div>
+
+  <script>
+    // javascrpit
+    var btnwsp = document.querySelector('#wspicon');
+    var form = document.querySelector('#form');
+    var sendbtn = document.querySelector('#form');
+    // var btnwsp = document.querySelector('#wspicon')
+
+    btnwsp.addEventListener('click', function(){
+      // alert('Hola')
+      form.classList.toggle('entrarysalir')
+    })
+
+    sendbtn.addEventListener('click', enviarMensaje)
+
+    function enviarMensaje(){
+      // alert('Hola')
+      // recueprar inputs
+      var inputName = document.querySelector('.input-wsp').value
+      var textareaMensaje = document.querySelector('.textarea-wsp').value
+      let url = 
+      "https://api.whatsapp.com/send?phone=56987517151&text=Nombre: %0" + inputName + "%0A%0AMensaje: %0A" + 
+        textareaMensaje + "%0A";
+
+      window.open(url);
+    }
+  </script>
+
 </body>
 </html>
