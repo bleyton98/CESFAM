@@ -205,7 +205,7 @@
     // javascrpit
     var btnwsp = document.querySelector('#wspicon');
     var form = document.querySelector('#form');
-    var sendbtn = document.querySelector('#form');
+    var sendbtn = document.querySelector('#sendbtn');
     // var btnwsp = document.querySelector('#wspicon')
 
     btnwsp.addEventListener('click', function(){
@@ -221,12 +221,13 @@
       var inputName = document.querySelector('.input-wsp').value
       var textareaMensaje = document.querySelector('.textarea-wsp').value
       let url = 
-      "https://api.whatsapp.com/send?phone=56987517151&text=Nombre: %0" + inputName + "%0A%0AMensaje: %0A" + 
+      "https://api.whatsapp.com/send?phone=56987517151&text=Nombre: %0A" + inputName + "%0A%0AMensaje: %0A" + 
         textareaMensaje + "%0A";
 
       window.open(url);
     }
   </script>
+
 
 </body>
 </html>
